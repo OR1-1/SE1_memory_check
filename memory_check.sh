@@ -48,7 +48,7 @@ echo 'Critical Threshold: '$crit
 if [ "$used_mem_percentage" -ge "$crit" ]; then
     echo 'CRITICAL!!'
     top_proc=$(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -11)
-    echo "$top_proc" | mail -s "$(date +"%Y%m%d %R") memory check - critical" loven.francis@gmail.com 
+    echo "$top_proc" | mail -s "$(date +"%Y%m%d %R") memory check - critical" $email 
     exit 2 
 elif [ "$used_mem_percentage" -ge "$warn" ] && [ "$used_mem_percentage" -lt "$crit" ]; then
     echo 'WARNING!!'
