@@ -1,5 +1,8 @@
 #!/bin/bash
 
+yum install bc -q -y
+yum install mail -q -y
+
 usage="USAGE:\n    ./memory_check -c [critical threshold (percentage)] -w [warning threshold (percentage)] -e [email address to send the report]"
 
 while getopts "c:w:e:" o; do
